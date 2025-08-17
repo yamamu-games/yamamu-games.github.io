@@ -1,0 +1,54 @@
+# IDE関連ファイル
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# AI・Copilot関連
+.copilot/
+copilot-chat/
+.github-copilot/
+*.copilot
+.ai/
+
+# OS関連ファイル
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node.js関連（将来的にnpmやNode.jsを使う場合）
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ビルド関連
+dist/
+build/
+*.min.js
+*.min.css
+
+# 一時ファイル
+*.tmp
+*.temp
+*.log
+
+# 環境設定ファイル
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# キャッシュファイル
+.cache/
+*.cache
+
+# バックアップファイル
+*.bak
+*.backup
