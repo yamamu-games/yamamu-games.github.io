@@ -4,7 +4,7 @@
 
 ## 🌐 サイトURL
 
-**GitHub Pages**: https://magooka.github.io/website/
+**GitHub Pages**: https://yamamu-games.github.io/website/
 
 ## 🎮 代表作品
 
@@ -32,7 +32,7 @@
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/magooka/website.git
+git clone https://github.com/yamamu-games/website.git
 cd website
 
 # ローカルサーバーを起動
