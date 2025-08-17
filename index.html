@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>やまむーゲームス | 遊び心で世界をちょっとだけ明るく</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="public/images/logo.png" alt="やまむーゲームス" class="logo-img">
+                    <span class="logo-text">やまむーゲームス</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">ホーム</a></li>
+                    <li><a href="#about" class="nav-link">私たちについて</a></li>
+                    <li><a href="#games" class="nav-link">ゲーム</a></li>
+                    <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">遊び心で世界を</span><br>
+                        <span class="gradient-text">ちょっとだけ明るく</span>
+                    </h1>
+                    <p class="hero-subtitle">独創的なゲーム体験と心温まるチャレンジ精神を届けるインディーゲーム開発チーム</p>
+                    <div class="hero-buttons">
+                        <a href="#games" class="btn btn-primary">
+                            <i class="fas fa-gamepad"></i> ゲームを見る
+                        </a>
+                        <a href="#about" class="btn btn-outline">
+                            <i class="fas fa-info-circle"></i> 詳しく見る
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                        <div class="shape shape-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 私たちについてセクション -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">私たちについて</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-description">
+                            やまむーゲームスは「遊び心で世界をちょっとだけ明るく」をテーマに、独創的なゲーム体験と心温まるチャレンジ精神を届けるインディーゲーム開発チームです。日常にスポーツやアクションの楽しさを取り入れ、プレイヤーが思わず笑顔になるような体験をデザインしています。
+                        </p>
+                        <div class="features">
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>心温まる体験</h3>
+                                <p>プレイヤーが思わず笑顔になるような温かい体験を大切にしています</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3>独創的なアイデア</h3>
+                                <p>既存の枠にとらわれない、新しいゲーム体験を追求しています</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3>チャレンジ精神</h3>
+                                <p>常に新しい技術と表現方法に挑戦し続けています</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ゲームセクション -->
+        <section id="games" class="games">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">代表作品</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="games-grid">
+                    <div class="game-card featured">
+                        <div class="game-image">
+                            <img src="public/images/bb_title.png" alt="BBアドベンチャー" class="game-img">
+                            <div class="game-overlay">
+                                <span class="game-tag">最新作</span>
+                            </div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">BBアドベンチャー</h3>
+                            <p class="game-description">
+                                実際のバランスボールを使い、体の動きを加速度センサーで検知しながらアスレチックステージをクリアしていく、体感型アクション・スポーツゲーム。バランスボールとコントローラー（DUALSHOCK 4/DualSense）が連動し、現実とゲームが融合した圧倒的な没入感と直感操作を実現。遊びながら体幹やバランス感覚が自然にトレーニングできるのも魅力です。
+                            </p>
+                            <div class="game-tags">
+                                <span class="tag">体感型</span>
+                                <span class="tag">スポーツ</span>
+                                <span class="tag">アクション</span>
+                                <span class="tag">フィットネス</span>
+                            </div>
+                            <div class="game-links">
+                                <a href="https://store.steampowered.com/app/example" class="game-link" target="_blank">
+                                    <i class="fab fa-steam"></i> Steam で見る
+                                </a>
+                                <a href="https://blog.example.com/bb-adventure" class="game-link" target="_blank">
+                                    <i class="fas fa-blog"></i> ブログ記事
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- コンタクトセクション -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">お問い合わせ</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>ご連絡はこちら</h3>
+                        <p>ゲームに関するお問い合わせや、コラボレーションのご相談など、お気軽にご連絡ください。</p>
+                        <div class="social-links">
+                            <a href="https://twitter.com/yamamoo_games" class="social-link" target="_blank">
+                                <i class="fab fa-x-twitter"></i>
+                                <span>@yamamoo_games</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="public/images/logo.png" alt="やまむーゲームス" class="logo-img">
+                    <span class="logo-text">やまむーゲームス</span>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 やまむーゲームス. All rights reserved.</p>
+                    <p>遊び心で世界をちょっとだけ明るく</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://twitter.com/yamamoo_games" class="social-icon" target="_blank">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
