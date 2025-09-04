@@ -2,7 +2,7 @@
 
 ## 🌐 サイトURL
 
-**GitHub Pages**: https://yamamu-games.github.io/website/
+**GitHub Pages**: https://yamamu-games.github.io
 
 ## 🎮 代表作品
 
@@ -30,8 +30,7 @@
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/yamamu-games/website.git
-cd website
+git clone git@github.com:yamamu-games/yamamu-games.github.io.git
 
 # ローカルサーバーを起動
 python3 -m http.server 8000
