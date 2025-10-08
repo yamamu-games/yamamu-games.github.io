@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yamamu-games.github.io/sitemap.xml
