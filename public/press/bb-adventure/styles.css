@@ -1,0 +1,93 @@
+/* ===============================
+   Presskit Page Styling
+   =============================== */
+   .presskit {
+    background-color: #f9fafc;
+    color: #222;
+    font-family: "Nunito", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    padding: 80px 20px;
+  }
+  
+  .presskit .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 60px 80px;
+    line-height: 1.8;
+  }
+  
+  /* タイトル */
+  .presskit .section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #2b3a67;
+    border-bottom: 3px solid #3a7bd5;
+    display: inline-block;
+    padding-bottom: 0.3em;
+  }
+  
+  /* 見出し */
+  .presskit h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    color: #3a7bd5;
+    border-left: 6px solid #3a7bd5;
+    padding-left: 10px;
+  }
+  
+  /* テキストとリスト */
+  .presskit p {
+    margin-bottom: 1.5em;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .presskit ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5em;
+  }
+  
+  .presskit ul li {
+    padding: 8px 12px;
+    background: #f3f6fb;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    transition: background 0.2s;
+  }
+  
+  .presskit ul li:hover {
+    background: #e9f1ff;
+  }
+  
+  /* リンク */
+  .presskit a {
+    color: #2b63c6;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .presskit a:hover {
+    text-decoration: underline;
+  }
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 768px) {
+    .presskit .container {
+      padding: 40px 20px;
+    }
+  
+    .presskit .section-title {
+      font-size: 1.8rem;
+    }
+  
+    .presskit h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
