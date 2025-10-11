@@ -1,0 +1,183 @@
+/* ===============================
+   Presskit Page Styling
+   =============================== */
+   .presskit {
+    background-color: #f9fafc;
+    color: #222;
+    font-family: "Nunito", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    padding: 80px 20px;
+  }
+  
+  .presskit .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 60px 80px;
+    line-height: 1.8;
+  }
+  
+  /* タイトル */
+  .presskit .section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #2b3a67;
+    border-bottom: 3px solid #3a7bd5;
+    display: inline-block;
+    padding-bottom: 0.3em;
+  }
+  
+  /* 見出し */
+  .presskit h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    color: #3a7bd5;
+    border-left: 6px solid #3a7bd5;
+    padding-left: 10px;
+  }
+  
+  /* テキストとリスト */
+  .presskit p {
+    margin-bottom: 1.5em;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .presskit ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5em;
+  }
+  
+  .presskit ul li {
+    padding: 8px 12px;
+    background: #f3f6fb;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    transition: background 0.2s;
+  }
+  
+  .presskit ul li:hover {
+    background: #e9f1ff;
+  }
+  
+  /* リンク */
+  .presskit a {
+    color: #2b63c6;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .presskit a:hover {
+    text-decoration: underline;
+  }
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 768px) {
+    .presskit .container {
+      padding: 40px 20px;
+    }
+  
+    .presskit .section-title {
+      font-size: 1.8rem;
+    }
+  
+    .presskit h2 {
+      font-size: 1.3rem;
+    }
+  }
+
+/* ===============================
+   Assets Section (画像・動画ギャラリー)
+   =============================== */
+
+   .presskit .assets {
+    margin-top: 3em;
+  }
+
+  .presskit .assets p {
+    margin-bottom: 1.2em;
+  }
+
+  .presskit .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+  }
+
+  .presskit .media-item {
+    background: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .presskit .media-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+
+  .presskit .media-item img,
+  .presskit .media-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .presskit .media-item figcaption {
+    font-weight: 700;
+    color: #2b3a67;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .presskit .media-item .meta {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: #2b63c6;
+  }
+
+  .presskit .media-item .meta a {
+    color: #2b63c6;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .presskit .media-item .meta a:hover {
+    text-decoration: underline;
+  }
+
+  .presskit .media-item.video {
+    background: #000;
+    color: #fff;
+    padding: 16px;
+  }
+
+  .presskit .media-item.video figcaption {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .presskit .media-item.video .meta a {
+    color: #a9c9ff;
+  }
+
+  /* レスポンシブ（スマホ） */
+  @media (max-width: 768px) {
+    .presskit .media-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .presskit .media-item {
+      padding: 10px;
+    }
+  }
