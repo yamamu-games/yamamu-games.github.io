@@ -237,3 +237,30 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+document.addEventListener("DOMContentLoaded", () => {
+    const newsList = document.getElementById("news-list");
+
+    fetch("public/news.json")
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(item => {
+          const article = document.createElement("article");
+          const imageHtml = item.image
+          ? `<img src="${item.image}" alt="${item.title}" class="news-image">`
+          : "";
+          article.classList.add("news-item");
+          article.innerHTML = `
+            ${imageHtml}
+            <h3 class="news-title">${item.title}</h3>
+            <p class="news-date">${new Date(item.date).toLocaleDateString('ja-JP')}</p>
+            <p class="news-content">${item.content}</p>
+            ${item.link ? `<a href="${item.link}" target="_blank" class="news-link">詳細を見る</a>` : ""}
+          `;
+          newsList.appendChild(article);
+        });
+      })
+      .catch(err => {
+        console.error("ニュースの読み込みに失敗しました:", err);
+        newsList.innerHTML = "<p>最新情報を読み込めませんでした。</p>";
+      });
+  });
