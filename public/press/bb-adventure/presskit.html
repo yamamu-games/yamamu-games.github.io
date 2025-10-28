@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BBアドベンチャー プレスキット | やまむーゲームス</title>
   <meta name="description" content="BBアドベンチャーの公式プレスキット。ロゴ、スクリーンショット、キービジュアル、ゲーム概要、連絡先を掲載。">
-  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,12 +16,16 @@
                 <img src="../../images/logo.png" alt="やまむーゲームス" class="logo-img">
                 <span class="logo-text">やまむーゲームス</span>
             </div>
+            <div class="lang-switch">
+              <button id="lang-ja">日本語</button>
+              <button id="lang-en">English</button>
+            </div>
             <ul class="nav-menu">
-                <li><a href="../../../index.html#home" class="nav-link">ホーム</a></li>
-                <li><a href="../../../index.html#about" class="nav-link">私たちについて</a></li>
-                <li><a href="../../../index.html#games" class="nav-link">ゲーム</a></li>
-                <li><a href="../../../index.html#news" class="nav-link">最新情報</a></li>
-                <li><a href="../../../index.html#contact" class="nav-link">お問い合わせ</a></li>
+                <li><a href="/index.html#home" class="nav-link">ホーム</a></li>
+                <li><a href="/index.html#about" class="nav-link">私たちについて</a></li>
+                <li><a href="/index.html#games" class="nav-link">ゲーム</a></li>
+                <li><a href="/index.html#news" class="nav-link">最新情報</a></li>
+                <li><a href="/index.html#contact" class="nav-link">お問い合わせ</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -48,8 +52,7 @@
       </ul>
 
       <p>
-        実際のバランスボールを使い、体の動きを加速度センサーで検知しながらアスレチックステージを攻略する体感型スポーツゲーム。
-        バランスボールとコントローラー（DUALSHOCK 4/DualSense）が連動し、没入感の高いゲーム体験を実現。
+        実際のバランスボールを使い、体の動きを加速度センサーで検知しながらアスレチックステージを攻略する体感型スポーツゲーム。バランスボールとコントローラー（DUALSHOCK 4/DualSense）が連動し、没入感の高いゲーム体験を実現。
       </p>
 
       <h2>クレジット</h2>
@@ -145,5 +148,43 @@
     </div>
 </footer>
 
+<script src="/script.js"></script>
+<script>
+  const translations = {
+    en: {
+      "BBアドベンチャー プレスキット": "BB Adventure Press Kit",
+      "このページでは、メディア掲載・レビュー・動画制作などに利用できる公式素材を提供しています。":
+        "This page provides official materials for media coverage, reviews, and video creation.",
+      "ゲーム概要": "Game Overview",
+      "タイトル：BBアドベンチャー": "Title: BB Adventure",
+      "ジャンル：体感型アクション・スポーツ": "Genre: Physical Action Sports",
+      "開発チーム：やまむーゲームス": "Developer: Yamamu Games",
+      "対応言語：日本語、英語": "Supported Languages: Japanese, English",
+      "対応プラットフォーム：Steam": "Platform: Steam",
+      "配信ページ：": "Store Page:",
+      "実際のバランスボールを使い、体の動きを加速度センサーで検知しながらアスレチックステージを攻略する体感型スポーツゲーム。バランスボールとコントローラー（DUALSHOCK 4/DualSense）が連動し、没入感の高いゲーム体験を実現。":
+        "A physical sports game using a real balance ball. The player’s movements are detected via an accelerometer, enabling immersive athletic gameplay that syncs with a DUALSHOCK 4 or DualSense controller.",
+      "クレジット": "Credits",
+      "制作・開発：やまむーゲームス（Yamamu Games）": "Developed by Yamamu Games",
+      "お問い合わせ": "Contact",
+      "取材・掲載に関するご連絡は": "For press or review inquiries, please contact",
+      "素材ダウンロード": "Assets Download",
+      "下記の画像・動画素材は、記事・レビュー・配信等でご利用いただけます（クレジット表記：やまむーゲームス）。":
+        "The following images and videos may be used for articles, reviews, or streaming (credit: Yamamu Games).",
+      "キービジュアル": "Key Visual",
+      "ロゴ（透過PNG）": "Logo (Transparent PNG)",
+      "スクリーンショット 01": "Screenshot 01",
+      "スクリーンショット 02": "Screenshot 02",
+      "スクリーンショット 03": "Screenshot 03",
+      "チラシ": "Flyer",
+      "ホーム": "Home",
+      "私たちについて": "About",
+      "ゲーム": "Games",
+      "最新情報": "News",
+      "お問い合わせ": "Contact",
+    },
+    ja: {} // 元のHTMLが日本語なので不要
+  };
+</script>
 </body>
 </html>

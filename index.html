@@ -55,6 +55,10 @@
                 <img src="public/images/logo.png" alt="やまむーゲームス" class="logo-img">
                 <span class="logo-text">やまむーゲームス</span>
             </div>
+            <div class="lang-switch">
+                <button id="lang-ja">日本語</button>
+                <button id="lang-en">English</button>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">ホーム</a></li>
                 <li><a href="#about" class="nav-link">私たちについて</a></li>
@@ -81,7 +85,9 @@
                 </h1>
                 <div class="hero-buttons">
                     <a href="#games" class="btn btn-primary">
-                        <i class="fas fa-gamepad"></i> ゲームを見る
+                        <i class="fas fa-gamepad"></i>
+                        <span>ゲームを見る</span>
+                    </p>
                     </a>
                 </div>
             </div>
@@ -94,8 +100,7 @@
             <div class="about-content-compact">
                 <h2 class="section-title-compact">私たちについて</h2>
                 <p class="about-description-compact">
-                    やまむーゲームスはその場のノリで気ままにゲームを作っている、ゆるめで自由なインディー開発チームです。
-                    「面白そう！」と思ったことを大事に楽しいゲームづくりを目指しています。
+                    やまむーゲームスはその場のノリで気ままにゲームを作っている、ゆるめで自由なインディー開発チームです。「面白そう！」と思ったことを大事に楽しいゲームづくりを目指しています。
                 </p>
             </div>
         </div>
@@ -119,8 +124,7 @@
                     <div class="game-content">
                         <h3 class="game-title">BBアドベンチャー</h3>
                         <p class="game-description">
-                            実際のバランスボールを使い、体の動きを加速度センサーで検知しながらアスレチックステージをクリアしていく、体感型アクション・スポーツゲーム。バランスボールとコントローラー（DUALSHOCK
-                            4/DualSense）が連動し、現実とゲームが融合した圧倒的な没入感と直感操作を実現。遊びながら体幹やバランス感覚が自然にトレーニングできるのも魅力です。
+                            実際のバランスボールを使い、体の動きを加速度センサーで検知しながらアスレチックステージをクリアしていく、体感型アクション・スポーツゲーム。バランスボールとコントローラー（DUALSHOCK 4/DualSense）が連動し、現実とゲームが融合した圧倒的な没入感と直感操作を実現。遊びながら体幹やバランス感覚が自然にトレーニングできるのも魅力です。
                         </p>
                         <div class="game-tags">
                             <span class="tag">体感型</span>
@@ -129,15 +133,9 @@
                             <span class="tag">フィットネス</span>
                         </div>
                         <div class="game-links">
-                            <a href="https://store.steampowered.com/app/3740460/BB/" class="game-link" target="_blank">
-                                <i class="fab fa-steam"></i> Steam で見る
-                            </a>
-                            <a href="https://bb-adventure.blogspot.com/" class="game-link" target="_blank">
-                                <i class="fas fa-blog"></i> ブログ記事
-                            </a>
-                            <a href="/public/press/bb-adventure/presskit.html" class="game-link">
-                                プレスキット
-                            </a>
+                            <a href="https://store.steampowered.com/app/3740460/BB/" class="game-link" target="_blank"><i class="fab fa-steam"></i><span>Steam で見る</span></a>
+                            <a href="https://bb-adventure.blogspot.com/" class="game-link" target="_blank"><i class="fas fa-blog"></i><span>ブログ記事</span></a>
+                            <a href="/public/press/bb-adventure/presskit.html" class="game-link">プレスキット</a>
                         </div>
                     </div>
                 </div>
@@ -201,5 +199,38 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+const translations = {
+    en: {
+      "ホーム": "Home",
+      "私たちについて": "About",
+      "ゲーム": "Games",
+      "ゲームを見る": "View Games",
+      "最新情報": "News",
+      "お問い合わせ": "Contact",
+      "やまむーゲームス": "Yamamu Games",
+      "やまむーゲームスはその場のノリで気ままにゲームを作っている、ゆるめで自由なインディー開発チームです。「面白そう！」と思ったことを大事に楽しいゲームづくりを目指しています。":
+        "Yamamu Games is a relaxed and free indie development team that creates games spontaneously. We focus on what feels fun and aim to make enjoyable, creative games.",
+      "代表作品": "Featured Work",
+      "最新作": "New Release",
+      "BBアドベンチャー": "BB Adventure",
+      "実際のバランスボールを使い、体の動きを加速度センサーで検知しながらアスレチックステージをクリアしていく、体感型アクション・スポーツゲーム。バランスボールとコントローラー（DUALSHOCK 4/DualSense）が連動し、現実とゲームが融合した圧倒的な没入感と直感操作を実現。遊びながら体幹やバランス感覚が自然にトレーニングできるのも魅力です。":
+        "A physical action-sports game that uses a real balance ball. Your body movements are detected via an accelerometer as you clear athletic stages. The ball syncs with your DUALSHOCK 4 or DualSense controller for immersive gameplay that naturally trains balance and core strength.",
+      "体感型": "Physical",
+      "スポーツ": "Sports",
+      "アクション": "Action",
+      "フィットネス": "Fitness",
+      "Steam で見る": "View on Steam",
+      "ブログ記事": "Blog Article",
+      "プレスキット": "Press Kit",
+      "最新情報": "News",
+      "お問い合わせ": "Contact",
+      "ご連絡はこちら": "Contact Us",
+      "ゲームに関するお問い合わせやなどお気軽にご連絡ください。":
+        "Feel free to reach out with any questions or media inquiries about our games.",
+    },
+    ja: {}
+  };
+</script>
 </body>
 </html>

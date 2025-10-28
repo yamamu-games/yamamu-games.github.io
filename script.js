@@ -239,28 +239,96 @@ document.head.appendChild(style);
 
 document.addEventListener("DOMContentLoaded", () => {
     const newsList = document.getElementById("news-list");
+    if (!newsList) return;
 
-    fetch("public/news.json")
-      .then(res => res.json())
-      .then(data => {
-        data.forEach(item => {
-          const article = document.createElement("article");
-          const imageHtml = item.image
-          ? `<img src="${item.image}" alt="${item.title}" class="news-image">`
-          : "";
-          article.classList.add("news-item");
-          article.innerHTML = `
-            ${imageHtml}
-            <h3 class="news-title">${item.title}</h3>
-            <p class="news-date">${new Date(item.date).toLocaleDateString('ja-JP')}</p>
-            <p class="news-content">${item.content}</p>
-            ${item.link ? `<a href="${item.link}" target="_blank" class="news-link">詳細を見る</a>` : ""}
-          `;
-          newsList.appendChild(article);
+    // 現在の言語状態を保存（デフォルト日本語）
+    let currentLang = "ja";
+
+    // ニュースを読み込む関数
+    function loadNews(lang) {
+      const file = lang === "en" ? "public/news_en.json" : "public/news.json";
+      fetch(file)
+        .then(res => res.json())
+        .then(data => {
+          newsList.innerHTML = ""; // クリア
+          if (!data || data.length === 0) {
+            newsList.innerHTML =
+              lang === "en"
+                ? "<p>No news articles available at the moment.</p>"
+                : "<p>現在、掲載できるニュースはありません。</p>";
+            return;
+          }
+
+          // 日付の降順に並び替え
+          data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          data.forEach(item => {
+            const article = document.createElement("article");
+            article.classList.add("news-item");
+
+            const imageHtml = item.image
+              ? `<img src="${item.image}" alt="${item.title}" class="news-image">`
+              : "";
+
+            article.innerHTML = `
+              ${imageHtml}
+              <h3 class="news-title">${item.title}</h3>
+              <p class="news-date">${new Date(item.date).toLocaleDateString(
+                lang === "en" ? "en-US" : "ja-JP"
+              )}</p>
+              <p class="news-content">${item.content}</p>
+              ${
+                item.link
+                  ? `<a href="${item.link}" target="_blank" class="news-link">${
+                      lang === "en" ? "Read more" : "詳細を見る"
+                    }</a>`
+                  : ""
+              }
+            `;
+            newsList.appendChild(article);
+          });
+        })
+        .catch(err => {
+          console.error("ニュースの読み込みに失敗しました:", err);
+          newsList.innerHTML =
+            lang === "en"
+              ? "<p>Failed to load news.</p>"
+              : "<p>最新情報を読み込めませんでした。</p>";
         });
-      })
-      .catch(err => {
-        console.error("ニュースの読み込みに失敗しました:", err);
-        newsList.innerHTML = "<p>最新情報を読み込めませんでした。</p>";
+    }
+
+    // 言語切り替え関数（ニュースも再読み込み）
+    function setLanguage(lang) {
+      document.querySelectorAll("body *").forEach(el => {
+        const text = el.childNodes[0];
+        if (text && text.nodeType === 3) {
+          const trimmed = text.textContent.trim();
+          if (translations[lang][trimmed]) {
+            text.textContent = translations[lang][trimmed];
+          } else if (
+            lang === "ja" &&
+            Object.values(translations.en).includes(trimmed)
+          ) {
+            const jaText = Object.keys(translations.en).find(
+              key => translations.en[key] === trimmed
+            );
+            text.textContent = jaText || trimmed;
+          }
+        }
       });
+      document.documentElement.lang = lang;
+      currentLang = lang;
+      loadNews(lang); // ← ここがポイント（切り替え時に再読み込み）
+    }
+
+    // ボタンイベント
+    document
+      .getElementById("lang-en")
+      .addEventListener("click", () => setLanguage("en"));
+    document
+      .getElementById("lang-ja")
+      .addEventListener("click", () => setLanguage("ja"));
+
+    // 初期読み込み
+    loadNews(currentLang);
   });
