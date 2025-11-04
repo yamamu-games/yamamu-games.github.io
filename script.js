@@ -3,21 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // ナビゲーションリンクのスムーススクロール
     const navLinks = document.querySelectorAll('.nav-link');
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+    // index.html のときだけスムーススクロールを有効にする
+    if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
 
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // ヘッダーの高さを考慮
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 80; // ヘッダーの高さを考慮
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    });
+    }
 
     // ヒーローセクションのボタンもスムーススクロール
     const heroButtons = document.querySelectorAll('.hero-buttons .btn');
@@ -239,13 +242,13 @@ document.head.appendChild(style);
 
 document.addEventListener("DOMContentLoaded", () => {
     const newsList = document.getElementById("news-list");
-    if (!newsList) return;
 
     // 現在の言語状態を保存（デフォルト日本語）
     let currentLang = "ja";
 
     // ニュースを読み込む関数
     function loadNews(lang) {
+      if (!newsList) return;
       const file = lang === "en" ? "public/news_en.json" : "public/news.json";
       fetch(file)
         .then(res => res.json())
