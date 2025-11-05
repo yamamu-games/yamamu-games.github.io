@@ -826,3 +826,47 @@ body {
     margin-bottom: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
+
+/* 言語切り替えエリア */
+.lang-switch {
+    top: 18px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+  }
+
+  /* 各言語リンク */
+  .lang-switch a {
+    display: block;
+    padding: 6px 16px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+
+  /* ホバー時 */
+  .lang-switch a:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* 現在の言語 */
+  .lang-switch a.active {
+    background: linear-gradient(135deg, #00bfff, #0077ff);
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+
+  .lang-switch.light a {
+    color: #333;
+  }
+  .lang-switch.light a.active {
+    color: #fff;
+  }

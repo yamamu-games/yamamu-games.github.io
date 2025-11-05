@@ -240,7 +240,11 @@ document.head.appendChild(style);
 document.addEventListener("DOMContentLoaded", () => {
     const newsList = document.getElementById("news-list");
 
-    fetch("public/news.json")
+    // 言語を判定（<html lang="xx"> から取得）
+    const lang = document.documentElement.lang || "ja";
+    const newsFile = lang === "en" ? "/public/news_en.json" : "/public/news.json";
+
+    fetch(newsFile)
       .then(res => res.json())
       .then(data => {
         data.forEach(item => {
@@ -252,15 +256,15 @@ document.addEventListener("DOMContentLoaded", () => {
           article.innerHTML = `
             ${imageHtml}
             <h3 class="news-title">${item.title}</h3>
-            <p class="news-date">${new Date(item.date).toLocaleDateString('ja-JP')}</p>
+            <p class="news-date">${new Date(item.date).toLocaleDateString(lang === "en" ? "en-US" : "ja-JP")}</p>
             <p class="news-content">${item.content}</p>
-            ${item.link ? `<a href="${item.link}" target="_blank" class="news-link">詳細を見る</a>` : ""}
+            ${item.link ? `<a href="${item.link}" target="_blank" class="news-link">${lang === "en" ? "Read more" : "詳細を見る"}</a>` : ""}
           `;
           newsList.appendChild(article);
         });
       })
       .catch(err => {
         console.error("ニュースの読み込みに失敗しました:", err);
-        newsList.innerHTML = "<p>最新情報を読み込めませんでした。</p>";
+        newsList.innerHTML = `<p>${lang === "en" ? "Failed to load news." : "最新情報を読み込めませんでした。"}</p>`;
       });
   });
