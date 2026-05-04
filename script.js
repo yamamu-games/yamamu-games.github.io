@@ -243,9 +243,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // 言語を判定（<html lang="xx"> から取得）
     const lang = document.documentElement.lang || "ja";
     const newsFile = lang === "en" ? "/public/news_en.json" : "/public/news.json";
+    const newsUrl = `${newsFile}?v=${Date.now()}`;
 
-    fetch(newsFile)
-      .then(res => res.json())
+    fetch(newsUrl, { cache: "no-store" })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Failed to fetch news: ${res.status}`);
+        }
+        return res.json();
+      })
       .then(data => {
         data.forEach(item => {
           const article = document.createElement("article");
